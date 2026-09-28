@@ -4,7 +4,7 @@ public class VPMain {
     VirtualPet vp = new VirtualPet();
     
     public VPMain(){
-        vp.feed()
+        vp.feed();
     }
 
     public void waitABeat(int ms){
