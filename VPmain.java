@@ -5,6 +5,13 @@ public class VPMain {
     
     public VPMain(){
         vp.feed();
+        vp.exercise();
+        this.waitABeat(500);
+        String ans= this.askForInput("Yaoi?");
+        if (ans == "yes")
+            vp.sleep();
+        else
+            vp.exercise();
     }
 
     public void waitABeat(int ms){
