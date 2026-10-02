@@ -6,7 +6,7 @@
 public class VirtualPet {
     
     VirtualPetFace face;
-    int hunger = 0;   // how hungry the pet is.
+    public int hunger = 0;   // how hungry the pet is.
     
     // constructor
     public VirtualPet() {
@@ -34,6 +34,10 @@ public class VirtualPet {
     public void sleep() {
         hunger = hunger + 1;
         face.setImage("asleep");
+    }
+
+    public void die(){
+        face.setImage("dead");
     }
 
     public void win() {

@@ -8,14 +8,20 @@ public class VPMain {
         this.waitABeat(100);
         vp.exercise();
         this.waitABeat(500);
-        String ans = this.askForInput("?");
-        if (ans == "yes"){
-            vp.sleep();
-            this.waitABeat(500);
-        }
-        else{
-            vp.exercise();
-            this.waitABeat(500);
+        while(true){
+            String ans = this.askForInput("?");
+            if (ans.equals("yes")){
+                vp.sleep();
+                this.waitABeat(5000);
+            }
+            else{
+                vp.exercise();
+                this.waitABeat(500);
+            }
+            if(vp.hunger >= 10){
+                vp.die();
+                this.waitABeat(50000);
+            }
         }
     }
 
