@@ -8,7 +8,7 @@ public class VPMain {
         this.waitABeat(100);
         vp.exercise();
         this.waitABeat(500);
-        String ans = this.askForInput("Yaoi?");
+        String ans = this.askForInput("?");
         if (ans == "yes"){
             vp.sleep();
             this.waitABeat(500);
