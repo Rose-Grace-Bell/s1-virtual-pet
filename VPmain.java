@@ -4,8 +4,7 @@ public class VPMain {
     VirtualPet vp = new VirtualPet();
 
     public VPMain(){
-        int life = 1;
-        while(life == 1){
+        while(vp.life == 1){
             String ans = this.askForInput("What should I do today? [Eat] [Sleep] [Think] [Friend]");
             if (ans.equals("Eat")){
                 vp.feed();
@@ -23,7 +22,7 @@ public class VPMain {
             }
             else{
                 vp.die();
-                life = 0;
+                vp.life = 0;
             }
             vp.check();
         }

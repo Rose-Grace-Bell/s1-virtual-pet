@@ -10,10 +10,11 @@ public class VirtualPet {
     public int joy = 10;
     public int stable = 10;
     public int tired = 5;
-    
+    public int life = 1;
     public void check(){
         if(joy==0 ||hunger == 10 || tired == 10)
             this.die();
+        life = 0;
         if(joy>10)
             joy=10;
         if(tired<0)
@@ -53,7 +54,7 @@ public class VirtualPet {
     }
 
     public void dead() {
-        
+
     }
 
 } // end Virtual Pet
