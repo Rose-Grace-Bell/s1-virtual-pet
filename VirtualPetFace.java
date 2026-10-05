@@ -129,7 +129,7 @@ public class VirtualPetFace extends JFrame implements ActionListener{
     }
     
     private void setBackground() {
-        Image backImage = createImage(base+"background.png", "");
+        Image backImage =createImage(base+"background.png", "");
         Border bkgrnd = new CentredBackgroundBorder(backImage);
         ((JComponent) getContentPane()).setBorder(bkgrnd);
     }

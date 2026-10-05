@@ -2,26 +2,30 @@ import javax.swing.*;
 
 public class VPMain {
     VirtualPet vp = new VirtualPet();
-    
+
     public VPMain(){
-        vp.feed();
-        this.waitABeat(100);
-        vp.exercise();
-        this.waitABeat(500);
-        while(true){
-            String ans = this.askForInput("?");
-            if (ans.equals("yes")){
+        int life = 1;
+        while(life == 1){
+            String ans = this.askForInput("What should I do today? [Eat] [Sleep] [Think] [Friend]");
+            if (ans.equals("Eat")){
+                vp.feed();
+                this.waitABeat(5000);
+            }
+            else if(ans.equals("Sleep")){
                 vp.sleep();
                 this.waitABeat(5000);
             }
+            else if(ans.equals("Think")){
+                this.waitABeat(5000);
+            }
+            else if(ans.equals("Friend")){
+                this.waitABeat(5000);
+            }
             else{
-                vp.exercise();
-                this.waitABeat(500);
-            }
-            if(vp.hunger >= 10){
                 vp.die();
-                this.waitABeat(50000);
+                life = 0;
             }
+            vp.check();
         }
     }
 

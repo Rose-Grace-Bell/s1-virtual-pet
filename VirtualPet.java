@@ -7,7 +7,20 @@ public class VirtualPet {
     
     VirtualPetFace face;
     public int hunger = 0;   // how hungry the pet is.
+    public int joy = 10;
+    public int stable = 10;
+    public int tired = 5;
     
+    public void check(){
+        if(joy==0 ||hunger == 10 || tired == 10)
+            this.die();
+        if(joy>10)
+            joy=10;
+        if(tired<0)
+            tired = 0;
+        if(hunger<10)
+            hunger=0;
+    }
     // constructor
     public VirtualPet() {
         face = new VirtualPetFace();
@@ -22,7 +35,6 @@ public class VirtualPet {
             hunger = 0;
         }
         face.setMessage("Yum, thanks");
-        face.setImage("normal");
     }
     
     public void exercise() {
@@ -40,7 +52,7 @@ public class VirtualPet {
         face.setImage("dead");
     }
 
-    public void win() {
+    public void dead() {
         
     }
 
