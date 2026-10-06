@@ -5,7 +5,7 @@ public class VPMain {
 
     public VPMain(){
         while(vp.life == 1){
-            String ans = this.askForInput("What should I do today? [Eat] [Sleep] [Think] [Friend]");
+            String ans = this.askForInput("What should I do? [Eat] [Sleep] [Think] [Friend]");
             if (ans.equals("Eat")){
                 vp.feed();
                 this.waitABeat(5000);
@@ -18,10 +18,11 @@ public class VPMain {
                 this.waitABeat(5000);
             }
             else if(ans.equals("Friend")){
-                this.waitABeat(5000);
+                vp.interact();
+                this.waitABeat(2000);
             }
             else{
-                vp.die();
+                vp.Suffer();
                 vp.life = 0;
             }
             vp.check();
@@ -50,4 +51,5 @@ public class VPMain {
         new VPMain();    
     }
 }
+
 
