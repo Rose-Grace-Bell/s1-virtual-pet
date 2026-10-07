@@ -8,14 +8,15 @@ public class VPMain {
             String ans = this.askForInput("What should I do? [Eat] [Sleep] [Think] [Friend]");
             if (ans.equals("Eat")){
                 vp.feed();
-                this.waitABeat(5000);
+                this.waitABeat(2000);
             }
             else if(ans.equals("Sleep")){
                 vp.sleep();
                 this.waitABeat(5000);
             }
             else if(ans.equals("Think")){
-                this.waitABeat(5000);
+                vp.thought();
+                this.waitABeat(2000);
             }
             else if(ans.equals("Friend")){
                 vp.interact();

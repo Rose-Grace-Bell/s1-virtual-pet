@@ -15,7 +15,6 @@ public class VirtualPet {
     public void check(){
         if(joy==0 ||hunger == 10 || tired == 10)
             this.die();
-            life = 0;
         if(joy>10)
             joy=10;
         if(tired<0)
@@ -68,8 +67,21 @@ public class VirtualPet {
     }
 
     public void thought(){
-        if(joy <= 5 || stable <= 3){
-            
+        if(joy <= 6 || stable <= 3){
+            face.setImage("verysad");
+            face.setMessage("I don't like this anymore.");
+            face.setImage("pushingdaisies");
+            life = 0; 
+        }
+        else if(joy >= 9 || stable == 5){
+            face.setImage("normal");
+            face.setMessage("Am I real?");
+            stable = stable -1;
+        }
+        else{
+            face.setMessage("*It screams*");
+            face.setMessage("*And then stops*");
+            this.Suffer();
         }
     }
 
